@@ -1,7 +1,7 @@
 
 const createChatAgent = () => {
 
-    const CS571_WITAI_ACCESS_TOKEN = ""; // Put your CLIENT access token here.
+    const CS571_WITAI_ACCESS_TOKEN = "EWIROQDIT2Q3NZ45JAXC4P7RIK6G4QTX"; // Put your CLIENT access token here.
 
     let jokeNum = 0;
 
@@ -31,7 +31,7 @@ const createChatAgent = () => {
     const tellJoke = async () => {
         const res = await fetch(`https://v2.jokeapi.dev/joke/Any?safe-mode`)
         const jokeData = await res.json();
-
+        jokeNum += 1;
         if (jokeData.type === 'single') {
             return `Joke #${jokeNum}: ${jokeData.joke} `;
         } else {
